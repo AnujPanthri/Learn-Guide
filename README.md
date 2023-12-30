@@ -5,8 +5,8 @@ An learning tool made for learning skills in an systematic way.
 ## Tasks :-
 
 - [X] Create Home Page
-- [ ] Create Login Page
-- [ ] Create Signup Page
+- [X] Create Login Page
+- [X] Create Signup Page
 - [ ] Create an simple Dashboard page
 
 

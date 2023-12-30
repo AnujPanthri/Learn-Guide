@@ -22,7 +22,15 @@ header{
     justify-content: space-between;
     padding:0.7rem 2rem;
 }
-
+header .circle{
+    border:2px solid #000;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+}
 header>.title{
     font-size:2rem;
     cursor: pointer;
@@ -43,47 +51,24 @@ header>.sub_header a:hover{
     border-bottom:2px solid #000;
 }
 
-
-#info_container,#topdown_container,#bottomup_container{
-    min-height:500px;
-    padding:2rem 4rem;
+section{
+    min-height:400px;
+    border-bottom: 1px solid black;
+    padding:1rem 2rem;
 }
 
-#info_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-#info_container>p{
-    width:25ch;
-    font-size: 1.5em;
-}
-
-#topdown_container{
-    background-color: #fedfdf;
-}
-
-#topdown_container>.heading,#bottomup_container>.heading{
-    /* text-align: right; */
-
-}
-#bottomup_container>.heading{
-    text-align: right;
-}
-
-#topdown_container>.main_section,#bottomup_container>.main_section{
-    width:100%;
-    margin:2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.main_section>p{
+section>p{
     font-size:1.5rem;
     width:50ch;
-    margin-inline:2rem;
+    /* margin-inline:2rem; */
+}
+#get_started_btn{
+    background-color: #44d;
+    color:#fff;
+    border:none;
+    padding: 1em;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
 }

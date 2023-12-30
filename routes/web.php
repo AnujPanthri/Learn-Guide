@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,14 @@ use App\Http\Controllers\HomeController;
 
 Route::prefix("/")->controller(HomeController::class)->group(function(){
     Route::get('/','home')->name("home");
+    Route::get('/login','login_form')->name("login.form");
+    Route::get('/signup','signup_form')->name("signup.form");
+    Route::post('/login/verify','login')->name("login");
+    Route::post('/signup/verify','signup')->name("signup");
+});
+
+Route::prefix('/dashboard')->middleware('is_customuser')->controller(DashboardController::class)->group(function(){
+
+    Route::get("/",'home')->name("dashboard");
+
 });
