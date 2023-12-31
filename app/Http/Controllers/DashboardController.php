@@ -10,4 +10,7 @@ class DashboardController extends Controller
     public function home(){
         return view('dashboard.home');
     }
+    public function explore(){
+        return view('dashboard.explore');
+    }
 }

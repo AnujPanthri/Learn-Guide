@@ -1,0 +1,102 @@
+#main_section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#search_skill_form{
+    margin: 2rem;
+    /* marigin: */
+    margin-top:4rem;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#search_skill_form>.search_input{
+    font-size:1.4rem;
+    padding: 0.3rem;
+    width: 500px;
+    margin-inline:1rem;
+    border:none;
+    outline:none;
+    border-bottom:2px solid #000;
+}
+#search_skill_form>.search_btn{
+    padding:1rem 1.5rem;
+    font-size:1rem;
+    border:none;
+    margin-inline:1rem;
+    background-color:blue;
+    border-radius: 50px;
+    color:#fff;
+    cursor: pointer;
+}
+
+.skills_container{
+    width:90%;
+    min-height:200px;
+    border-radius: 10px;
+    box-shadow: #000 0px 0px 20px -10px;
+    padding: 1rem;
+    position:relative;
+    margin-bottom: 2rem;
+}
+
+.create_skill_container{
+    display:flex;
+    justify-content: end;
+}
+
+.create_skill_btn{
+    /* width:100%; */
+    top:20px;
+    right:20px;
+
+    display: inline-block;
+    padding:1rem 1.5rem;
+    font-size:1rem;
+    border:none;
+    /* margin-inline:1rem; */
+    background-color:blue;
+    border-radius: 50px;
+    color:#fff;
+}
+.skills{
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top:2rem;
+}
+
+.skill{
+    margin:1rem;
+    margin-right:2rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding:10px;
+    box-shadow: #000 0px 0px 20px -10px;
+
+}
+
+.skill>.title{
+    margin:1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.skill>.start_btn{
+    display: inline-block;
+    margin:1rem;
+
+
+    padding:0.5rem 1rem;
+    font-size:1rem;
+    border:none;
+    /* margin-inline:1rem; */
+    background-color:blue;
+    border-radius: 50px;
+    color:#fff;
+}

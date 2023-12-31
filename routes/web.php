@@ -25,5 +25,6 @@ Route::prefix("/")->controller(HomeController::class)->group(function(){
 Route::prefix('/dashboard')->middleware('is_customuser')->controller(DashboardController::class)->group(function(){
 
     Route::get("/",'home')->name("dashboard");
+    Route::get("/explore",'explore')->name("dashboard.explore");
 
 });

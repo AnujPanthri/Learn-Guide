@@ -7,7 +7,9 @@ An learning tool made for learning skills in an systematic way.
 - [X] Create Home Page
 - [X] Create Login Page
 - [X] Create Signup Page
-- [ ] Create an simple Dashboard page
+- [X] Create an simple layout page
+- [X] Create an simple Dashboard page
+- [X] Create an simple explore skills page
 
 
 ## Steps to run :-
