@@ -29,5 +29,8 @@ Route::prefix('/dashboard')->middleware('is_customuser')->controller(DashboardCo
     Route::get("/myskills",'myskills')->name("dashboard.myskills");
     Route::post("/createskill",'createSkill')->name("dashboard.createskill");
     Route::get("/skill/{id}",'skill')->name("dashboard.skill");
+    Route::post("/createtask/{skill_id}",'createTask')->name("dashboard.createtask");
+    Route::get("/taskdetail/{task_id}",'taskDetail')->name("dashboard.taskdetail");
+    Route::post("/taskpracticed",'taskPracticed')->name("dashboard.taskpracticed");
 
 });

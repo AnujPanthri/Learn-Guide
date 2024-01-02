@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('type');
+            $table->integer('practice_count')->default(0);
             $table->string('skill_id');
             $table->foreign('skill_id')->on('skills')->references('id')->onDelete('cascade');
 

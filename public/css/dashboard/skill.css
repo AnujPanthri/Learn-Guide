@@ -67,12 +67,17 @@
     margin-left:0;
     width: 18ch;
     cursor: pointer;
+    border:none;
+    display: block;
 }
 .task>span{
     text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(90, 90, 90);
 }
 
-#modal{
+#modal,#task_modal{
     position: absolute;
     top:50%;
     left:50%;
@@ -81,17 +86,17 @@
     outline: none;
     border-radius: 10px;
     padding:2rem;
-    background-color: #f0f0f0;
+    background-color: #fafafa;
 }
 
-#modal>.close_btn{
+#modal>.close_btn , #task_modal>.close_btn{
     position:absolute;
     top:10px;
     right:10px;
     cursor: pointer;
 }
 
-#modal>.container{
+#modal>.container , #task_modal>.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,10 +135,69 @@
 }
 
 
-.error_msg{
-    color: red;
-    font-size:0.8rem;
+
+
+#task_modal .title{
+    font-size:2rem;
+    margin-bottom: 1rem;
+}
+
+#task_modal .practice_btn{
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #2b60f2;
+    color: #fff;
+    padding:0.7rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
 }
 
 
 
+#error_container{
+    height:80%;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+
+}
+
+#error_container>.error{
+    min-width:100px;
+    min-height:50px;
+    width:fit-content;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px -5px #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+}
+#error_container>.error>i{
+    background-color: red;
+    color:#fafafa;
+
+    padding:0.3rem;
+    margin: 1rem;
+
+    border-radius:50%;
+    width:2rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#error_container>.error>span{
+    margin-right: 1rem;
+
+}
+.error_msg{
+    color: red;
+    font-size:0.8rem;
+}

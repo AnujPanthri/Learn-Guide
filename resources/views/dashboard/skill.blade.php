@@ -18,7 +18,13 @@
                 <button class="new_btn" onclick="modal.showModal()">New</button>
             </div>
             <div class="tasks">
-                <div class='task'>
+
+                @foreach ($tasks as $task)
+                    <div class='task' onclick='showTask({{ $task->id }})'>
+                        <span>{{ $task->title }}</span>
+                    </div>
+                @endforeach
+                {{-- <div class='task' onclick='showTask(id)'>
                     <span>learn how fret works</span>
                 </div>
                 <div class='task'>
@@ -26,15 +32,15 @@
                 </div>
                 <div class='task'>
                     <span>learn guitar string names</span>
-                </div>
+                </div> --}}
 
             </div>
         </div>
     </section>
     <dialog id="modal">
         <i onclick="modal.close()" class="fa-solid fa-xmark close_btn"></i>
-        {{-- <form class="container" method="POST" action="{{ route('dashboard.createtask',$skill->id) }}"> --}}
-        <form class="container" method="POST">
+        <form class="container" method="POST" action="{{ route('dashboard.createtask', $skill->id) }}">
+            {{-- <form class="container" method="POST"> --}}
             @csrf
             <p class='title'>
                 New Task
@@ -55,7 +61,7 @@
                     <option value="app">Application</option>
                 </select>
                 <span class='error_msg'>
-                    @error('title')
+                    @error('task_type')
                         {{ $message }}
                     @enderror
                 </span>
@@ -63,10 +69,32 @@
             <input type='submit' class='submit_btn' value='Add'>
         </form>
     </dialog>
-    {{-- if there is any error show the modal --}}
+
+    <dialog id="task_modal">
+        <i onclick="task_modal.close()" class="fa-solid fa-xmark close_btn"></i>
+        <form class="container" method="POST" action="{{ route('dashboard.taskpracticed') }}">
+            @csrf
+            <input type='text' name="task_id" id="task_id" hidden>
+            <span class='title'>Title</span>
+            <span>Practice Count: <span class='count'>0</span></span>
+            <input class="practice_btn" type="submit" value="practiced">
+        </form>
+    </dialog>
+
+    <div id="error_container"></div>
+
+    <script src="{{ asset('js/dashboard/skill.js') }}"></script>
     <script>
-        @if ($errors->any())
-            modal.showModal();
-        @endif
+
+        var taskdetail_url = "{{ route('dashboard.taskdetail', 1) }}";
+        taskdetail_url = taskdetail_url.split('/').slice(0, -1).join("/");
+        var taskdetail_url = "{{ route('dashboard.taskdetail', 1) }}";
+        taskdetail_url = taskdetail_url.split('/').slice(0, -1).join("/");
+
+        // task_modal.showModal();
+        @foreach($errors->all() as $error)
+            addError('{{ $error }}');
+        @endforeach
+
     </script>
 @endsection
