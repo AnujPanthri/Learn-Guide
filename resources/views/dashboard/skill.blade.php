@@ -15,30 +15,54 @@
         <div class="task_container">
             <div class='header_container'>
                 <h2>Basic/Core Skills</h2>
-                <button class="new_btn" onclick="modal.showModal()">New</button>
+                <button class="new_btn" onclick="showCreateTask('basic')">New</button>
             </div>
             <div class="tasks">
 
                 @foreach ($tasks as $task)
+                    @continue($task->type != 'basic')
                     <div class='task' onclick='showTask({{ $task->id }})'>
                         <span>{{ $task->title }}</span>
                     </div>
                 @endforeach
-                {{-- <div class='task' onclick='showTask(id)'>
-                    <span>learn how fret works</span>
-                </div>
-                <div class='task'>
-                    <span>learn how tuning keys works</span>
-                </div>
-                <div class='task'>
-                    <span>learn guitar string names</span>
-                </div> --}}
+
+            </div>
+        </div>
+        <div class="task_container">
+            <div class='header_container'>
+                <h2>Sub Skills</h2>
+                <button class="new_btn" onclick="showCreateTask('sub')">New</button>
+            </div>
+            <div class="tasks">
+
+                @foreach ($tasks as $task)
+                    @continue($task->type != 'sub')
+                    <div class='task' onclick='showTask({{ $task->id }})'>
+                        <span>{{ $task->title }}</span>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+        <div class="task_container">
+            <div class='header_container'>
+                <h2>Applications</h2>
+                <button class="new_btn" onclick="showCreateTask('app')">New</button>
+            </div>
+            <div class="tasks">
+
+                @foreach ($tasks as $task)
+                    @continue($task->type != 'app')
+                    <div class='task' onclick='showTask({{ $task->id }})'>
+                        <span>{{ $task->title }}</span>
+                    </div>
+                @endforeach
 
             </div>
         </div>
     </section>
-    <dialog id="modal">
-        <i onclick="modal.close()" class="fa-solid fa-xmark close_btn"></i>
+    <dialog id="createtask_modal">
+        <i onclick="closeCreateTask()" class="fa-solid fa-xmark close_btn"></i>
         <form class="container" method="POST" action="{{ route('dashboard.createtask', $skill->id) }}">
             {{-- <form class="container" method="POST"> --}}
             @csrf
@@ -85,16 +109,14 @@
 
     <script src="{{ asset('js/dashboard/skill.js') }}"></script>
     <script>
-
         var taskdetail_url = "{{ route('dashboard.taskdetail', 1) }}";
         taskdetail_url = taskdetail_url.split('/').slice(0, -1).join("/");
         var taskdetail_url = "{{ route('dashboard.taskdetail', 1) }}";
         taskdetail_url = taskdetail_url.split('/').slice(0, -1).join("/");
 
         // task_modal.showModal();
-        @foreach($errors->all() as $error)
+        @foreach ($errors->all() as $error)
             addError('{{ $error }}');
         @endforeach
-
     </script>
 @endsection

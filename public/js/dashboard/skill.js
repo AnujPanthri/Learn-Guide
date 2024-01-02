@@ -1,3 +1,11 @@
+function showCreateTask(task_type){
+    var task_type_elem = createtask_modal.querySelector("#task_type");
+    task_type_elem.value = task_type;
+    createtask_modal.showModal();
+}
+function closeCreateTask(){
+    createtask_modal.close();
+}
 function showTask(task_id){
     fetch(`${taskdetail_url}/${task_id}`,{
         method:"GET",
