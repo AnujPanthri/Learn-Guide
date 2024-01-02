@@ -14,8 +14,8 @@
         <div class="sub_header">
             <div>
                 <a href="{{ route('dashboard') }}">Dashboard</a>
-                <a>My Skills</a>
-                <a href="{{ route('dashboard.explore') }}">Explore</a>
+                <a href="{{ route('dashboard.myskills') }}">My Skills</a>
+                {{-- <a href="{{ route('dashboard.explore') }}">Explore</a> --}}
             </div>
 
             @if (!Auth::guard('customuser')->check())

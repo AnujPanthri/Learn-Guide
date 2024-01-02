@@ -9,7 +9,7 @@
             <p>
                 Start learning the skills which you always wanted to the right way.
             </p>
-            <a href="{{ route('dashboard.explore') }}" id="get_started_btn">Get Started</a>
+            <a href="{{ route('dashboard.myskills') }}" id="get_started_btn">Get Started</a>
         </div>
         <img src="{{ asset('images/skills collage.png') }}">
         {{-- @include('components.topdown')
