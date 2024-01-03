@@ -1,3 +1,13 @@
+---
+title: Learn Guide
+emoji: 🐠
+colorFrom: yellow
+colorTo: yellow
+sdk: docker
+pinned: false
+app_port: 8000
+---
+
 # Learn Guide
 
 An learning tool made for learning skills in an systematic way.
