@@ -29,3 +29,9 @@ An learning tool made for learning skills in an systematic way.
 - php artisan key:generate
 - php artisan migrate --force
 - php artisan serve
+
+
+
+## command used to chance already commited files to lfs
+
+- git lfs migrate import --include="public/images/*" --everything
