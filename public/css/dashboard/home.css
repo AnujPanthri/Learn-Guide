@@ -1,6 +1,6 @@
 section{
     min-height:400px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     padding:1rem 2rem;
 }
 
@@ -19,7 +19,7 @@ section{
     padding:1rem;
 }
 section p{
-    font-size:1.5rem;
+    font-size:1.5em;
     /* margin-inline:2rem; */
     margin:1rem 0;
 }
@@ -30,7 +30,29 @@ section p{
     padding: 1em;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1em;
     cursor: pointer;
     display: inline-block;
 }
+
+
+
+
+@media screen and (max-width: 550px) {
+    #new_user_section{
+        flex-direction: column-reverse;
+    }
+
+    #new_user_section>img{
+        width:100%;
+    }
+
+    #new_user_section>.sub_container{
+        font-size:0.7rem;
+    }
+
+
+}
+
+
+
