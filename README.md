@@ -20,7 +20,7 @@ An learning tool made for learning skills in an systematic way.
 - [X] Create an simple layout page
 - [X] Create an simple Dashboard page
 - [X] Create an simple explore skills page
-
+- [ ] Make it mobile responsive
 
 ## Steps to run :-
 

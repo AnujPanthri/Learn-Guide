@@ -1,43 +1,103 @@
-#info_container,#topdown_container,#bottomup_container{
-    min-height:500px;
-    padding:2rem 4rem;
+#info_container,
+#topdown_container,
+#bottomup_container {
+    min-height: 500px;
+    padding: 2rem 4rem;
 }
 
-#info_container{
+#info_container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 
-#info_container>p{
-    width:25ch;
+#info_container>p {
+    width: 25ch;
+    margin: 9px;
     font-size: 1.5em;
 }
 
-#topdown_container{
-    background-color: #fedfdf;
+#info_container>img {
+    max-width: 550px;
+    width: 50%;
 }
 
-#topdown_container>.heading,#bottomup_container>.heading{
+#topdown_container {
+    background-image:linear-gradient(-45deg, white, pink, purple);
+}
+
+#topdown_container>.heading,
+#bottomup_container>.heading {
     /* text-align: right; */
 
 }
-#bottomup_container>.heading{
+
+#bottomup_container>.heading {
     text-align: right;
 }
 
-#topdown_container>.main_section,#bottomup_container>.main_section{
-    width:100%;
-    margin:2rem;
+#topdown_container>.main_section,
+#bottomup_container>.main_section {
+    width: 100%;
+    margin: 2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.main_section>p{
-    font-size:1.5rem;
-    width:50ch;
-    margin-inline:2rem;
+.main_section>p {
+    font-size: 1.5rem;
+    width: 50ch;
+    max-width: 100%;
+    margin-inline: 2rem;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    #info_container,
+    #topdown_container,
+    #bottomup_container {
+        padding: 2rem 1rem;
+    }
+
+    #info_container {
+        flex-direction: column-reverse;
+
+        >p {
+            width: 100%;
+            margin: 20px;
+            font-size: 1.5em;
+        }
+
+        >img {
+            width: 80%;
+        }
+    }
+
+    #topdown_container>.main_section{
+        margin-inline:0;
+        flex-direction: column-reverse;
+
+    }
+
+    #bottomup_container>.main_section{
+        margin-inline:0;
+        flex-direction: column;
+    }
+
+    .main_section>p{
+        margin-top:20px;
+        font-size:1rem;
+
+    }
+
+    #topdown_container>.heading,#bottomup_container>.heading{
+        text-align: center;
+    }
+
+}
+
+

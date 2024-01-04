@@ -1,55 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-a{
-    color:#000;
+a {
+    color: #000;
     /* border:none; */
     text-decoration: none;
 }
 
-header{
-    height:80px;
+
+header {
+    height: 80px;
     background-color: #FFC3C3;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding:0.7rem 2rem;
+    padding: 0.7rem 2rem;
+}
+header>.left{
+    position: relative;
 }
 
-header>.title{
-    font-size:2rem;
+header .menu_btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+header .title {
+    font-size: 2rem;
     cursor: pointer;
 }
 
-header>.sub_header{
+header>.sub_header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-header>.sub_header a{
-    margin-inline:10px;
+header>.sub_header a {
+    margin-inline: 10px;
     cursor: pointer;
+    text-align: center;
 }
-header>.sub_header a:hover{
-    border-bottom:2px solid #000;
+
+header>.sub_header a:hover {
+    border-bottom: 2px solid #000;
 }
-header #user_badge{
-    border-radius:50%;
+
+header #user_badge {
+    border-radius: 50%;
     background-color: #0000004c;
     aspect-ratio: 1;
-    color:#fff;
-    padding:1rem;
+    color: #fff;
+    padding: 1rem;
 
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+@media screen and (max-width:550px) {
+
+    header {
+        height: unset;
+        flex-direction: column;
+        padding-inline: 0;
+    }
+
+    header .menu_btn {
+        display: inherit;
+
+    }
+
+    header>.left{
+        width:100%;
+        text-align: center;
+        /* margin-bottom: 10px; */
+
+    }
+
+    .sub_header.hidden{
+        display:none;
+    }
+
+    header>.sub_header {
+        width: 100%;
+        flex-direction: column;
+        background-color: inherit;
+        margin-top: 10px;
+    }
+
+    header>.sub_header>div {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    header>.sub_header a {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 50px;
+        background-color: black;
+        color: white;
+
+    }
 }
