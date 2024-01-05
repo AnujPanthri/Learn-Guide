@@ -39,6 +39,10 @@ section p{
 
 
 @media screen and (max-width: 550px) {
+    section{
+        min-height:400px;
+        padding:1rem 1rem;
+    }
     #new_user_section{
         flex-direction: column-reverse;
     }

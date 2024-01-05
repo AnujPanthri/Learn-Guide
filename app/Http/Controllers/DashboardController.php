@@ -133,7 +133,7 @@ class DashboardController extends Controller
         ]);
 
         // check if it has been a given amount of time since they last practiced
-        $minutes = 2;
+        $minutes = 60*6;
         $task = Task::where('id',$request->task_id);
         $task = $task->first();
 

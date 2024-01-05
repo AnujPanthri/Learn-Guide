@@ -100,7 +100,12 @@
             @csrf
             <input type='text' name="task_id" id="task_id" hidden>
             <span class='title'>Title</span>
-            <span>Practice Count: <span class='count'>0</span></span>
+            {{-- <span>Practice Count: <span class='count'>0</span></span> --}}
+            <div class="progress_bar_container">
+
+                <div class="progress_bar"></div>
+
+            </div>
             <input class="practice_btn" type="submit" value="practiced">
         </form>
     </dialog>
@@ -114,9 +119,10 @@
         var taskdetail_url = "{{ route('dashboard.taskdetail', 1) }}";
         taskdetail_url = taskdetail_url.split('/').slice(0, -1).join("/");
 
-        // task_modal.showModal();
         @foreach ($errors->all() as $error)
-            addError('{{ $error }}');
+        addError('{{ $error }}');
         @endforeach
+
+        // task_modal.showModal();
     </script>
 @endsection

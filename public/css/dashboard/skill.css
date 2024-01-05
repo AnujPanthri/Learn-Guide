@@ -26,7 +26,7 @@
     color: #fff;
     padding: 0.7rem 1rem;
     border-radius: 50px;
-    border:none;
+    border: none;
     cursor: pointer;
 }
 
@@ -37,100 +37,107 @@
     border-bottom: 2px solid black;
 }
 
-.task_container{
-    width:100%;
-    display:flex;
+.task_container {
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    margin:1rem;
-    padding:1rem;
+    margin: 1rem;
+    padding: 1rem;
 }
-.tasks{
-    width:100%;
-    margin-top:2rem;
-    display:flex;
+
+.tasks {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    min-height:200px;
+    min-height: 200px;
 }
-.task{
-    box-shadow:0px 0px 10px -6px #000;
-    padding:3rem 2rem;
+
+.task {
+    box-shadow: 0px 0px 10px -6px #000;
+    padding: 3rem 2rem;
     background-color: #fff;
     border-radius: 10px;
-    margin:2rem;
-    margin-top:0;
-    margin-left:0;
-    width: 18ch;
+    margin: 2rem;
+    margin-top: 0;
+    margin-left: 0;
+    width: fit-content;
     cursor: pointer;
-    border:none;
+    border: none;
     display: block;
 }
-.task>span{
+
+.task>span {
     text-align: center;
     font-size: 1rem;
     font-weight: 600;
     color: rgb(90, 90, 90);
 }
 
-#createtask_modal,#task_modal{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    border:none;
+#createtask_modal,
+#task_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
     outline: none;
     border-radius: 10px;
-    padding:2rem;
+    padding: 2rem;
     background-color: #fafafa;
+
 }
 
-#createtask_modal>.close_btn , #task_modal>.close_btn{
-    position:absolute;
-    top:10px;
-    right:10px;
+#createtask_modal>.close_btn,
+#task_modal>.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
 }
 
-#createtask_modal>.container , #task_modal>.container{
+#createtask_modal>.container,
+#task_modal>.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#createtask_modal>.container>.title{
+#createtask_modal>.container>.title {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-#createtask_modal .field{
+#createtask_modal .field {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
 }
 
-#createtask_modal .task_input{
+#createtask_modal .task_input {
     border-radius: 10px;
     border: none;
     outline: none;
     font-size: 1rem;
-    padding:1rem 2rem;
+    padding: 1rem 2rem;
     background-color: #fff;
     box-shadow: 0px 0px 10px -8px;
 }
 
-#createtask_modal .submit_btn{
+#createtask_modal .submit_btn {
     border-radius: 50px;
     border: none;
     outline: none;
     background-color: #2b60f2;
     color: #fff;
-    padding:0.7rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     margin-top: 2rem;
     cursor: pointer;
 }
@@ -138,26 +145,94 @@
 
 
 
-#task_modal .title{
-    font-size:2rem;
+#task_modal .title {
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-#task_modal .practice_btn{
+#task_modal .practice_btn {
     border-radius: 50px;
     border: none;
     outline: none;
     background-color: #2b60f2;
     color: #fff;
-    padding:0.7rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     margin-top: 1rem;
     cursor: pointer;
 }
 
+.progress_bar_container {
+    width: 500px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.progress_bar {
+    /* background:linear-gradient(-45deg, rgb(197, 137, 126) ,rgb(218, 151, 162)); */
+    background-color: transparent;
+    height: 120px;
+    /* width:400px; */
+
+    /* color:#fafafa; */
+    border-radius: 50px;
+    padding: 0.8rem 1.2rem;
+    padding-right: 4rem;
+
+    display: flex;
+    align-items: center;
 
 
-#error_container{
-    height:80%;
+}
+
+.progress_bar>.milestone {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+.progress_bar .circle {
+    background-color: #cbcbcb;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+    /* height:50%; */
+    aspect-ratio: 1;
+    width: 40px;
+}
+
+.progress_bar .text {
+    /* display: hidden; */
+    position: absolute;
+    /* bottom:0; */
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+}
+
+.progress_bar .line {
+    /* display: none; */
+    background: linear-gradient(-45deg, rgb(224, 69, 2), rgb(255, 191, 0));
+    border: none;
+    height: 5px;
+    width: 100px;
+}
+
+
+.progress_bar .circle.learn {
+    background: linear-gradient(-45deg, rgb(237, 129, 20), lightgreen, transparent);
+    box-shadow: 0px 0px 20px -5px rgb(116, 121, 110);
+}
+
+.progress_bar .circle.practice {
+    background: linear-gradient(-75deg, rgb(217, 108, 133), rgb(220, 157, 75), transparent);
+    box-shadow: 0px 0px 20px -5px #a9e085;
+}
+
+#error_container {
+    height: 80%;
     position: fixed;
     bottom: 40px;
     right: 30px;
@@ -168,10 +243,10 @@
 
 }
 
-#error_container>.error{
-    min-width:100px;
-    min-height:50px;
-    width:fit-content;
+#error_container>.error {
+    min-width: 100px;
+    min-height: 50px;
+    width: fit-content;
     background-color: #fff;
     box-shadow: 0px 0px 10px -5px #000;
     border-radius: 10px;
@@ -179,26 +254,58 @@
     align-items: center;
     margin: 6px 0;
 }
-#error_container>.error>i{
-    background-color: red;
-    color:#fafafa;
 
-    padding:0.3rem;
+#error_container>.error>i {
+    background-color: red;
+    color: #fafafa;
+
+    padding: 0.3rem;
     margin: 1rem;
 
-    border-radius:50%;
-    width:2rem;
+    border-radius: 50%;
+    width: 2rem;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#error_container>.error>span{
+#error_container>.error>span {
     margin-right: 1rem;
 
 }
-.error_msg{
+
+.error_msg {
     color: red;
-    font-size:0.8rem;
+    font-size: 0.8rem;
+}
+
+
+
+@media screen and (max-width: 550px) {
+    #main_section {
+        margin: 1rem;
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .task {
+
+        padding: 2rem;
+        margin: 1rem;
+        margin-top: 0;
+        margin-left: 0;
+
+        width: fit-content;
+    }
+
+    dialog {
+        width: 100%;
+    }
+
+    .progress_bar_container {
+        width: 100%;
+    }
+
+
 }
